@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package games;
+
+service GamesService {
+    rpc GetGame(GetGameRequest) returns (GetGameResponse) {}
+    rpc CreateGame(CreateGameRequest) returns (CreateGameResponse) {}}
+message Game {
+    int32 id = 1;
+    string name = 2;
+    string background_images = 3;
+    string description = 4;
+    string released = 5;
+    string metacritic = 6;
+}
+
+message CreateGameRequest {
+    int32 id = 1;
+    string name = 2;
+    string background_images = 3;
+    string description = 4;
+    string released = 5;
+    string metacritic = 6;
+}
+message CreateGameResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    int32 id = 3;
+}
+message GetGameRequest {
+    int32 id = 1;
+}
+message GetGameResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    Game game = 3;
+}
+

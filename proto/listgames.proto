@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package listgames;
+
+service ListGames {
+  rpc CreateListGames (CreateListGamesRequest) returns (CreateListGamesResponse) {}
+}
+
+message CreateListGamesRequest {
+    string name = 1;
+    repeated string games = 2;
+    int32 userId = 3;
+}
+message CreateListGamesResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    int32 listId = 3;
+}
+
