@@ -15,7 +15,6 @@ message Game {
 }
 
 message CreateGameRequest {
-    int32 id = 1;
     string name = 2;
     string background_images = 3;
     string description = 4;
