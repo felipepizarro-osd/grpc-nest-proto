@@ -8,7 +8,7 @@ service ListGames {
 
 message CreateListGamesRequest {
     string name = 1;
-    repeated string games = 2;
+    int32 gameid = 2;
     int32 userId = 3;
 }
 message CreateListGamesResponse {
