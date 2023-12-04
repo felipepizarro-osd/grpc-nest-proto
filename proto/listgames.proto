@@ -2,16 +2,13 @@ syntax = "proto3";
 
 package listgames;
 
-import "games.proto";
-
 service ListGames {
   rpc CreateListGames (CreateListGamesRequest) returns (CreateListGamesResponse) {}
-  rpc AddGameToList (AddGameToListRequest) returns (AddGameToListResponse) {}
-  rpc GetGamesByUserId (GetGamesByUserIdRequest) returns (GetGamesByUserIdResponse) {}
 }
 
 message CreateListGamesRequest {
     string name = 1;
+    int32 gameid = 2;
     int32 userId = 3;
 }
 message CreateListGamesResponse {
@@ -20,21 +17,4 @@ message CreateListGamesResponse {
     int32 listId = 3;
 }
 
-message AddGameToListRequest {
-  int32 listId = 1;
-  games.Game game = 2;
-}
-
-message AddGameToListResponse {
-  int32 status = 1;
-  repeated string error = 2;
-}
-
-message GetGamesByUserIdRequest {
-  int32 userId = 1;
-}
-
-message GetGamesByUserIdResponse {
-  repeated games.Game games = 1;
-}
 
