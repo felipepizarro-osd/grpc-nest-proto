@@ -34,4 +34,8 @@ message GetGameResponse {
     repeated string error = 2;
     Game game = 3;
 }
-
+message GetGamesResponse {
+    int32 status = 1;
+    repeated Game games = 2;
+    repeated string error = 3;
+}
