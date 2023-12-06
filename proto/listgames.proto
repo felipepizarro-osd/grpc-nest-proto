@@ -8,6 +8,7 @@ service ListGames {
   rpc CreateListGames (CreateListGamesRequest) returns (CreateListGamesResponse) {}
   rpc AddGamesToList (AddGamesToListRequest) returns (AddGamesToListResponse) {}
   rpc GetGamesInList (GetGamesInListRequest) returns (GetGamesInListResponse) {}
+  rpc DeleteGameFromList (DeleteGameFromListRequest) returns (DeleteGameFromListResponse) {}
 }
 
 message CreateListGamesRequest {
@@ -42,4 +43,13 @@ message GetGamesInListResponse {
     int32 status = 1;
     repeated string error = 2;
     repeated games.Game game = 3;  // Use the imported Game message
+}
+message DeleteGameFromListRequest {
+    int32 listId = 1;
+    int32 gameId = 2;
+}
+message DeleteGameFromListResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    int32 listId = 3;
 }
