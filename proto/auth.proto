@@ -6,7 +6,7 @@ service AuthService {
     rpc Login(LoginRequest) returns (LoginResponse) {}
     rpc Register(RegisterRequest) returns (RegisterResponse) {}
     rpc Validate(ValidateRequest) returns (ValidateResponse) {}
-    rpc ValidateId(ValidateIdRequest) return (ValidateIdResponse) {}
+    rpc ValidateId(ValidateIdRequest) returns (ValidateIdResponse) {}
 }
 
 //register
